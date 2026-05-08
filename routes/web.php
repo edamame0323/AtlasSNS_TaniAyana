@@ -29,27 +29,24 @@ Route::get('search', [UsersController::class, 'index']);
 Route::get('follow-list', [PostsController::class, 'index']);
 Route::get('follower-list', [PostsController::class, 'index']);
 
-// 新規登録画面（表示）
-Route::get('/register', [AuthController::class, 'showRegisterForm']);
+// ①～④、⑥はauth.phpに記載
 
-// 新規登録処理（ボタンを押したとき）
-Route::post('/register', [AuthController::class, 'register']);
+// ①新規登録画面（表示）
+// Route::get('/register', [AuthController::class, 'showRegisterForm']);
 
-// ログイン画面（表示）
-Route::get('/login', [AuthController::class, 'showLoginForm']);
+// ②新規登録処理（ボタンを押したとき）
+// Route::post('/register', [AuthController::class, 'register']);
 
-// ログイン処理（ボタンを押したとき）
-Route::post('/login', [AuthController::class, 'login']);
+// ③ログイン画面と（表示）
+// Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
-// ログイン画面
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+// ④ログイン処理（ボタンを押したとき）
+// Route::post('/login', [AuthController::class, 'login']);
 
-// ログイン後ページ
+// ⑤ログイン後ページ
 Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
 
-// ログアウト
-Route::post('/logout', [AuthController::class, 'logout']);
+// ⑥ログアウト
+// Route::post('/logout', [AuthController::class, 'logout']);
