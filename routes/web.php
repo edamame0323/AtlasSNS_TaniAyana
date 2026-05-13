@@ -20,14 +20,14 @@ use App\Http\Controllers\AuthController;
 
 require __DIR__ . '/auth.php';
 
-Route::get('top', [PostsController::class, 'index']);
+Route::get('top', [PostsController::class, 'index'])->middleware('auth');
 
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('profile', [ProfileController::class, 'profile'])->middleware('auth');
 
-Route::get('search', [UsersController::class, 'index']);
+Route::get('search', [UsersController::class, 'search'])->middleware('auth');
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('follow-list', [PostsController::class, 'index'])->middleware('auth');
+Route::get('follower-list', [PostsController::class, 'index'])->middleware('auth');
 
 // ①～④、⑥はauth.phpに記載
 
