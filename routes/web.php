@@ -20,7 +20,7 @@ use App\Http\Controllers\AuthController;
 
 require __DIR__ . '/auth.php';
 
-Route::get('top', [PostsController::class, 'index'])->middleware('auth');
+Route::get('top', [PostsController::class, 'index'])->middleware('auth')->name('top');
 
 Route::get('profile', [ProfileController::class, 'profile'])->middleware('auth');
 
