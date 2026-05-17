@@ -74,7 +74,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ])) {
-            return redirect('/home');   // ログイン成功
+            return redirect('/top');   // ログイン成功
         }
 
         return back()->withErrors([

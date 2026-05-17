@@ -20,14 +20,18 @@ use App\Http\Controllers\AuthController;
 
 require __DIR__ . '/auth.php';
 
-Route::get('top', [PostsController::class, 'index'])->middleware('auth')->name('top');
+Route::middleware('auth')->group(function () {
 
-Route::get('profile', [ProfileController::class, 'profile'])->middleware('auth');
+    Route::get('top', [PostsController::class, 'index'])->name('top');
 
-Route::get('search', [UsersController::class, 'search'])->middleware('auth');
+    Route::get('profile', [ProfileController::class, 'profile']);
 
-Route::get('follow-list', [PostsController::class, 'index'])->middleware('auth');
-Route::get('follower-list', [PostsController::class, 'index'])->middleware('auth');
+    Route::get('search', [UsersController::class, 'search']);
+
+    Route::get('follow-list', [PostsController::class, 'index']);
+    Route::get('follower-list', [PostsController::class, 'index']);
+
+});
 
 // ①～④、⑥はauth.phpに記載
 
@@ -44,9 +48,9 @@ Route::get('follower-list', [PostsController::class, 'index'])->middleware('auth
 // Route::post('/login', [AuthController::class, 'login']);
 
 // ⑤ログイン後ページ
-Route::get('/home', function () {
-    return view('home');
-})->middleware('auth');
+// Route::get('/home', function () {
+//     return view('home');
+// })->middleware('auth');
 
 // ⑥ログアウト
 // Route::post('/logout', [AuthController::class, 'logout']);
