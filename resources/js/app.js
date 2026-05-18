@@ -1,3 +1,4 @@
+import { list } from 'postcss';
 import './bootstrap';
 
 import Alpine from 'alpinejs';
