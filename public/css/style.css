@@ -13,6 +13,20 @@ header {
     display: none;
 }
 
+/* 矢印の見た目の設定と回転の見た目 */
+.arrow {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(135deg);
+}
+
+.arrow.open {
+    transform: rotate(-45deg);
+}
+
 /* main content */
 #row {
     display: flex;

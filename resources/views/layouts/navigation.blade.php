@@ -11,7 +11,7 @@
 
                 <div class="menu-trigger">  <!-- ここをクリックする場所にする -->
                     <p>〇〇さん</p>
-                    <span class="arrow">▼</span>  <!-- arrow → 矢印 -->
+                    <span class="arrow"></span>  <!-- arrow → 矢印 -->
                 </div>
 
                 <ul class="menu-list">
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const trigger = document.querySelector('.menu-trigger');
     const menu = document.querySelector('.menu-list');
+    const arrow = document.querySelector('.arrow');
 
     trigger.addEventListener('click', function () {
 
@@ -37,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             menu.style.display = 'block';
         }
+
+        arrow.classList.toggle('open');
 
     });
 
