@@ -74,6 +74,22 @@ header {
     color: white;
 }
 
+/* ログアウトのところがボタンみたいになってるから、リンクっぽく見せる（HOME・プロフィールと統一） */
+.menu-list button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: white;
+    color: gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-list button:hover {
+    background: #186AC9;
+    color: white;
+}
+
 /* main content */
 #row {
     display: flex;

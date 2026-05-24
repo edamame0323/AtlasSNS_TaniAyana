@@ -33,4 +33,4 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 // ログアウト
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

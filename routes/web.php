@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('top', [PostsController::class, 'index'])->name('top');
 
-    Route::get('profile', [ProfileController::class, 'profile']);
+    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 
     Route::get('search', [UsersController::class, 'search']);
 
@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
-// ①～④、⑥はauth.phpに記載
+// ①～④、⑥はroute/auth.phpに記載
 
 // ①新規登録画面（表示）
 // Route::get('/register', [AuthController::class, 'showRegisterForm']);
