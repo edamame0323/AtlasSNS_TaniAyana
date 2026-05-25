@@ -13,6 +13,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 /* 矢印の見た目の設定と回転の見た目 */
@@ -34,7 +35,9 @@ header {
 .accordion-menu {
     position: relative;
     margin-left: auto;
-    padding-right: 20px;
+    z-index: 100;
+    right: 250px;
+    top: 20px;
 }
 
 .menu-trigger {
@@ -47,12 +50,12 @@ header {
 .menu-list {
     display: none;
     position: absolute;
-    top: 30px;
-    right: -20px;
-    width: 160px;
+    top: 50px;
+    left: 50px;
+    width: 220px;
     background: white;
     border: 1px solid #ccc;
-    z-index: 10;
+    z-index: 100;
 }
 
 .menu-list li {
@@ -101,6 +104,6 @@ header {
 }
 
 #side-bar {
-    flex: 0 0 19%;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
 }
