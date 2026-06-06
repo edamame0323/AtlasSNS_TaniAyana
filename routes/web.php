@@ -28,8 +28,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('search', [UsersController::class, 'search']);
 
-    Route::get('follow-list', [PostsController::class, 'index']);
-    Route::get('follower-list', [PostsController::class, 'index']);
+    Route::get('follow-list', [PostsController::class, 'followList']);
+    Route::get('follower-list', [PostsController::class, 'followerList']);
 
 });
 
