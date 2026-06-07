@@ -1,7 +1,19 @@
-<!-- <x-login-layout>
+<x-login-layout>
 
+<form class="post-form">
 
-  <h2>HOME画面
-    機能を実装していきましょう。</h2>
+  <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="アイコン" class="post-icon">
 
-</x-login-layout> -->
+  <textarea
+    name="post"
+    placeholder="投稿内容を入力してください。"
+    class="post-text">
+  </textarea>
+
+  <button type="submit" class="post-button">
+    <img src="{{ asset('images/post.png') }}" alt="投稿" class="post-btn">
+  </button>
+
+</form>
+
+</x-login-layout>

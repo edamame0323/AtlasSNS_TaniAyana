@@ -107,3 +107,31 @@ header {
     flex: 0 0 20%;
     border-left: 1px solid #727272;
 }
+
+.post-form {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.post-icon {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.post-text {
+    flex: 1;
+    height: 80px;
+    border: none;
+    resize: none;
+}
+
+.post-button {
+    margin-left: 20px;
+    border: none;
+    background: transparent;
+}
+
+.post-btn {
+    width: 50px;
+}
