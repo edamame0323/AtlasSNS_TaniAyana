@@ -47,6 +47,22 @@ header {
     cursor: pointer;
 }
 
+.menu-trigger p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.user-name {
+    margin-right: 15px;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+}
+
 .menu-list {
     display: none;
     position: absolute;

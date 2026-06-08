@@ -10,8 +10,14 @@
             <div class="accordion-menu">  <!-- メニュー全体を囲う -->
 
                 <div class="menu-trigger">  <!-- ここをクリックする場所にする -->
-                    <p>〇〇さん</p>
+
+                    <p>{{ Auth::user()->username }} さん</p>
+
                     <span class="arrow"></span>  <!-- arrow → 矢印 -->
+
+                    <img src="{{ asset('images/' . Auth::user()->icon_image) }}"
+                         alt="アイコン"
+                         class="header-icon">
                 </div>
 
                 <ul class="menu-list">
