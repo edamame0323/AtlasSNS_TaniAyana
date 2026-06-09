@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('top', [PostsController::class, 'index'])->name('top');
 
+    Route::post('/create', [PostsController::class, 'create']);
+
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 
     Route::get('search', [UsersController::class, 'search']);
