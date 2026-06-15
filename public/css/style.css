@@ -151,3 +151,7 @@ header {
 .post-btn {
     width: 50px;
 }
+
+.error-message {
+    color: red;
+}
