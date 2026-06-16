@@ -26,4 +26,8 @@
 
 </form>
 
+@foreach($posts as $post)
+    <p>{{ $post->post }}</p>
+@endforeach
+
 </x-login-layout>
