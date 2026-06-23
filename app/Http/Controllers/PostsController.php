@@ -56,9 +56,9 @@ class PostsController extends Controller
     }
 
     // 削除機能
-    public function delete(Request $request)
+    public function delete($id)
     {
-        $post = Post::where('id', $request->id())
+        $post = Post::where('id', $id)
                     ->where('user_id', Auth::id())
                     ->first();
 
