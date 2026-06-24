@@ -7,7 +7,7 @@ $(function () {
         var post = $(this).attr('post');
         var post_id = $(this).attr('post_id');
 
-        $('.modal_post').text(post);
+        $('.modal_post').val(post);
         $('.modal_id').val(post_id);
 
         return false;
