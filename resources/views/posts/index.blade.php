@@ -36,12 +36,20 @@
 
     <p>{{ $post->created_at }}</p>
 
+    @if(Auth::id() == $post->user_id)
+
     <a class="js-modal-open"
        href=""
        post="{{ $post->post }}"
        post_id="{{ $post->id }}">
-        編集
+
+      <img src="{{ asset('images/edit.png') }}"
+           alt="編集"
+           class="edit-btn">
+
     </a>
+
+    @endif
 
     <form method="POST" action="{{ route('post.delete', $post->id) }}">
       @csrf

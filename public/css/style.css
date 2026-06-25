@@ -156,6 +156,14 @@ header {
     color: red;
 }
 
+.edit-btn {
+    width: 40px;
+}
+
+.edit-btn:hover {
+    content: url("../images/edit_h.png");
+}
+
 /* モーダル */
 .modal {
     display: none;
