@@ -28,34 +28,52 @@
 
 @foreach($posts as $post)
 
+  <div class="post-item">
+
     <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="アイコン">
 
-    <p>{{ $post->user->username }}</p>
+    <div class="post-content">
+        <p>{{ $post->user->username }}</p>
+        <p>{{ $post->post }}</p>
+        <p>{{ $post->created_at }}</p>
+    </div>
 
-    <p>{{ $post->post }}</p>
+    <div class="post-action">
 
-    <p>{{ $post->created_at }}</p>
+      @if(Auth::id() == $post->user_id)
 
-    @if(Auth::id() == $post->user_id)
+      <a class="js-modal-open"
+        href=""
+        post="{{ $post->post }}"
+        post_id="{{ $post->id }}">
 
-    <a class="js-modal-open"
-       href=""
-       post="{{ $post->post }}"
-       post_id="{{ $post->id }}">
-
-      <img src="{{ asset('images/edit.png') }}"
+        <img src="{{ asset('images/edit.png') }}"
            alt="編集"
            class="edit-btn">
 
-    </a>
+      </a>
 
-    @endif
+      @endif
 
-    <form method="POST" action="{{ route('post.delete', $post->id) }}">
-      @csrf
-      <button type="submit">削除</button>
-    </form>
+      @if(Auth::id() == $post->user_id)
 
+      <form method="POST"
+            action="{{ route('post.delete', $post->id) }}"
+            onsubmit="return confirm('この投稿を削除します。よろしいでしょうか？');">
+
+        @csrf
+
+        <button type="submit" class="delete-btn">
+            <img src="{{ asset('images/trash.png') }}" alt="削除">
+        </button>
+
+      </form>
+
+      @endif
+
+    </div>
+
+  </div>
 @endforeach
 
 <!-- ここからモーダル -->
@@ -67,8 +85,10 @@
         <form action="{{ route('post.update') }}" method="POST">
           @csrf
           <textarea name="post" class="modal_post"></textarea>
-          <input type="hidden" name="id" class="modal_id">
-          <input type="submit" value="更新">
+
+          <button type="submit" class="edit-btn">
+            <img src="{{ asset('images/edit.png') }}" alt="更新">
+          </button>
         </form>
 
         <a class="js-modal-close" href="">閉じる</a>
