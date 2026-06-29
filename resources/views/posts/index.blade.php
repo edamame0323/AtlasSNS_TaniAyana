@@ -86,7 +86,9 @@
           @csrf
           <textarea name="post" class="modal_post"></textarea>
 
-          <button type="submit" class="edit-btn">
+          <input type="hidden" name="id" class="modal_id">
+
+          <button type="submit" class="update-btn">
             <img src="{{ asset('images/edit.png') }}" alt="更新">
           </button>
         </form>
