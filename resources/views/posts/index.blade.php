@@ -93,8 +93,6 @@
           </button>
         </form>
 
-        <a class="js-modal-close" href="">閉じる</a>
-
       </div>
  </div>
 
