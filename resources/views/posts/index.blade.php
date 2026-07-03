@@ -33,9 +33,14 @@
     <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="アイコン">
 
     <div class="post-content">
-        <p>{{ $post->user->username }}</p>
-        <p>{{ $post->post }}</p>
+
+      <div class="post-header">
+        <p class="post-name">{{ $post->user->username }}</p>
         <p>{{ $post->created_at }}</p>
+      </div>
+
+      <p>{{ $post->post }}</p>
+
     </div>
 
     <div class="post-action">

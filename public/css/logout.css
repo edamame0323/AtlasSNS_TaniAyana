@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
-html{
+html,
+body {
     height: 100%;
+    margin: 0;
 }
 
-body{
-    height: 100%;
-    background: #186AC9;
+body.logout-page {
+    background: linear-gradient(to bottom, #1f6dc4 0%, #4ea2e2 60%, #f2e84c 100%);
 }

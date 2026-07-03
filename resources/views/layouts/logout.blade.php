@@ -22,7 +22,7 @@
         <!--iphoneのアプリアイコン指定-->
         <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     </head>
-    <body>
+    <body class="logout-page">
         <header>
             <h1><img src="images/atlas.png"></h1>
             <p>Social Network Service</p>

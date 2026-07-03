@@ -136,6 +136,11 @@ header {
     margin-left: 15px;
 }
 
+.post-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .post-action {
     display: flex;
     gap: 10px;
