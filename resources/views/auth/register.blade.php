@@ -1,38 +1,50 @@
 <x-logout-layout>
-    <!-- Laravel Cllective（補助ライブラリ）を使ったコードはこっち↓ -->
-    <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/register', 'method' => 'POST']) !!}
 
-<h2>新規ユーザー登録</h2>
+<div class="login-wrapper">
 
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+    <div class="login-form">
+
+        <!-- Laravel Cllective（補助ライブラリ）を使ったコードはこっち↓ -->
+        <!-- 適切なURLを入力してください -->
+        {!! Form::open(['url' => '/register', 'method' => 'POST']) !!}
+
+        <h2>新規ユーザー登録</h2>
+
+            @if ($errors->any())
+                <div class="error-message">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+        {{ Form::label('username', 'ユーザー名') }}
+        {{ Form::text('username',null,['class' => 'input']) }}
+
+        {{ Form::label('email', 'メールアドレス') }}
+        {{ Form::email('email',null,['class' => 'input']) }}
+
+        {{ Form::label('password', 'パスワード') }}
+        {{ Form::password('password',['class' => 'input']) }}
+
+        {{ Form::label('password_confirmation', 'パスワード確認') }}
+        {{ Form::password('password_confirmation',['class' => 'input']) }}
+
+        <div class="login-btn">
+            {{ Form::submit('登録') }}
+        </div>
+
+        <p class="register-link">
+            <a href="login">ログイン画面へ戻る</a>
+        </p>
+
+        {!! Form::close() !!}
+
     </div>
-@endif
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
-
-{{ Form::label('メールアドレス') }}
-{{ Form::email('email',null,['class' => 'input']) }}
-
-{{ Form::label('パスワード') }}
-{{ Form::password('password',['class' => 'input']) }}
-
-{{ Form::label('パスワード確認') }}
-{{ Form::password('password_confirmation',null,['class' => 'input']) }}
-
-{{ Form::submit('登録') }}
-
-<p><a href="login">ログイン画面へ戻る</a></p>
-
-{!! Form::close() !!}
-
+</div>
 
 </x-logout-layout>
 
