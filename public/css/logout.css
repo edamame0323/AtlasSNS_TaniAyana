@@ -3,12 +3,15 @@
 /* ======== 共通 ======== */
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body.logout-page {
-    min-height: 100%;
+    min-height: 100vh;
+    margin: 0;
     background: linear-gradient(to bottom, #1f6dc4 0%, #4ea2e2 60%, #f2e84c 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* ======== 全体レイアウト ======== */
@@ -105,7 +108,7 @@ header p {
 /* ======== リンク ======== */
 .register-link {
     text-align: center;
-    margin-top: 30px 0 0;
+    margin: 30px 0 0;
 }
 
 .register-link a {
