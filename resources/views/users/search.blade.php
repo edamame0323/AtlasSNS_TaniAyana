@@ -1,4 +1,21 @@
 <x-login-layout>
-<h1>ユーザー検索画面</h1>
+
+<div class="search-area">
+
+    <form action="{{ url('/search') }}" method="GET" class="search-form">
+        <input
+            type="text"
+            name="keyword"
+            class="search-input"
+            placeholder="ユーザー名"
+        >
+
+        <button type="submit" class="search-btn">
+            <img src="{{ asset('images/search.png') }}" alt="検索">
+        </button>
+
+    </form>
+
+</div>
 
 </x-login-layout>
