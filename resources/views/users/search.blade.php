@@ -18,4 +18,31 @@
 
 </div>
 
+@if (!empty($keyword))
+    <p class="search-keyword">
+        検索ワード : {{ $keyword }}
+    </p>
+@endif
+
+<div class="user-list">
+
+    @foreach($users as $user)
+
+    <div class="user-item">
+
+        <div class="user-info">
+            <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
+            <p>{{ $user->username }}</p>
+        </div>
+
+        <!-- フォロー/フォロー解除ボタンを書く -->
+        <div class="follow-btn">
+
+        </div>
+
+    </div>
+
+    @endforeach
+
+</div>
 </x-login-layout>
