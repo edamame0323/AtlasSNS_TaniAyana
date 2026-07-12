@@ -37,7 +37,13 @@
         </div>
 
         <!-- フォロー/フォロー解除ボタンを書く -->
-        <div class="follow-btn">
+        <div class="follow-area">
+
+                @if(in_array($user->id, $followingIds))
+                    <button class="unfollow-btn">フォロー解除</button>
+                @else
+                    <button class="follow-btn">フォローする</button>
+                @endif
 
         </div>
 

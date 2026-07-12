@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -20,6 +21,11 @@ class UsersController extends Controller
             $users = User::where('id', '!=', auth()->id())->get();
         }
 
-        return view('users.search', compact('users', 'keyword'));
+        $followingIds = Auth::user()
+            ->follows()  // ユーザーがフォローしている人たちを取得
+            ->pluck('users.id')  // フォローしている人のIDだけを取り出す
+            ->toArray();  // 配列に変換する
+
+        return view('users.search', compact('users', 'keyword', 'followingIds'));
     }
 }
