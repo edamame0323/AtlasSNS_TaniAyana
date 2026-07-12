@@ -269,11 +269,17 @@ header {
 }
 
 /* ユーザー検索画面 */
+.search-area {
+    display: flex;
+    align-items: center;
+    gap: 250px;
+    margin: 50px;
+}
+
 .search-form {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 50px 0 0 50px;
 }
 
 .search-input {
@@ -293,6 +299,10 @@ header {
 .search-btn img {
     width: 50px;
     height: auto;
+}
+
+.search-keyword {
+    font-size: 24px;
 }
 
 /* ユーザー一覧 */

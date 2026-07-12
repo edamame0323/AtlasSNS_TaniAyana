@@ -8,6 +8,7 @@
             name="keyword"
             class="search-input"
             placeholder="ユーザー名"
+            value="{{ $keyword ?? '' }}"
         >
 
         <button type="submit" class="search-btn">
@@ -16,13 +17,13 @@
 
     </form>
 
-</div>
+    @if (!empty($keyword))
+        <p class="search-keyword">
+            検索ワード : {{ $keyword }}
+        </p>
+    @endif
 
-@if (!empty($keyword))
-    <p class="search-keyword">
-        検索ワード : {{ $keyword }}
-    </p>
-@endif
+</div>
 
 <div class="user-list">
 
