@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FollowsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 
     Route::get('search', [UsersController::class, 'search']);
+
+    Route::post('/follow/{id}', [FollowsController::class, 'follow'])->name('follow');
+
+    Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])->name('unfollow');
 
     Route::get('follow-list', [PostsController::class, 'followList']);
     Route::get('follower-list', [PostsController::class, 'followerList']);

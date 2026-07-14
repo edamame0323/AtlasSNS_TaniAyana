@@ -40,9 +40,15 @@
         <div class="follow-area">
 
                 @if(in_array($user->id, $followingIds))
-                    <button class="unfollow-btn">フォロー解除</button>
+                    <form action="{{ route('unfollow', $user->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="unfollow-btn">フォロー解除</button>
+                    </form>
                 @else
-                    <button class="follow-btn">フォローする</button>
+                    <form action="{{ route('follow', $user->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="follow-btn">フォローする</button>
+                    </form>
                 @endif
 
         </div>
