@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
-    //
+    //トップ画面
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
@@ -69,11 +69,25 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
+    // フォロー
     public function followList()
     {
-        return view('follows.followList');
+        // フォローしているユーザーを取得
+        $followUsers = Auth::user()->follows;
+
+        // フォローしているユーザーのIDだけ取り出す
+        $followUserIds = $followUsers->pluck('id');
+
+        // フォローしているユーザーの投稿を取得
+        $posts = Post::with('user')
+            ->whereIn('user_id', $followUserIds)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('follows.followList', compact('followUsers', 'posts'));
     }
 
+    // フォロワー
     public function followerList()
     {
         return view('follows.followerList');

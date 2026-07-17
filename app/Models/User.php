@@ -35,6 +35,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    // フォロー
     public function follows(): BelongsToMany
     {
         return $this->belongsToMany(
@@ -45,6 +46,7 @@ class User extends Authenticatable
         );
     }
 
+    // フォロワー
     public function followers(): BelongsToMany
     {
         return $this->belongsToMany(
