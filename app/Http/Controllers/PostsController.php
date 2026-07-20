@@ -90,6 +90,8 @@ class PostsController extends Controller
     // フォロワー
     public function followerList()
     {
-        return view('follows.followerList');
+        $followerUsers = Auth::user()->followers;
+
+        return view('follows.followerList', compact('followerUsers'));
     }
 }
