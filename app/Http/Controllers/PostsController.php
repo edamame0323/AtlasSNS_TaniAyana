@@ -90,8 +90,19 @@ class PostsController extends Controller
     // フォロワー
     public function followerList()
     {
+        // フォロワーを取得
         $followerUsers = Auth::user()->followers;
 
-        return view('follows.followerList', compact('followerUsers'));
+        // フォロワーのIDを取り出す
+        $followerUserIds = $followerUsers->pluck('id');
+
+        // フォロワーの投稿を取得・投稿日時が新しい順番に並べる
+        $posts = Post::with('user')
+            ->whereIn('user_id', $followerUserIds)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // フォロワー一覧の$followerUsersと、投稿一覧用の$postsの両方をBladeに渡している
+        return view('follows.followerList', compact('followerUsers', 'posts'));
     }
 }
