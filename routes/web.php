@@ -31,7 +31,11 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/post/delete/{id}', [PostsController::class, 'delete'])->name('post.delete');
 
-    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    // 自分のプロフィール
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+
+    // 相手のプロフィール
+    Route::get('/profile/{user_id}', [UsersController::class, 'profile'])->name('user.profile');
 
     Route::get('search', [UsersController::class, 'search']);
 

@@ -28,4 +28,13 @@ class UsersController extends Controller
 
         return view('users.search', compact('users', 'keyword', 'followingIds'));
     }
+
+        public function profile($user_id)
+    {
+        $user = User::find($user_id);
+
+        return view('users.profile', [
+            'user' => $user,
+        ]);
+    }
 }

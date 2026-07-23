@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+
 class ProfileController extends Controller
 {
-    public function profile(){
+    // 自分のプロフィール
+    public function profile()
+    {
         return view('profiles.profile');
     }
 }
