@@ -37,10 +37,13 @@ Route::middleware('auth')->group(function () {
     // 相手のプロフィール
     Route::get('/profile/{user_id}', [UsersController::class, 'profile'])->name('user.profile');
 
+    // 検索機能
     Route::get('search', [UsersController::class, 'search']);
 
+    // フォロー機能
     Route::post('/follow/{id}', [FollowsController::class, 'follow'])->name('follow');
 
+    // フォロー解除
     Route::post('/unfollow/{id}', [FollowsController::class, 'unfollow'])->name('unfollow');
 
     Route::get('follow-list', [PostsController::class, 'followList']);

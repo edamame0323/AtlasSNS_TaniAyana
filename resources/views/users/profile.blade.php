@@ -9,9 +9,15 @@
 <p>自己紹介:{{ $user->bio }}</p>
 
 @if($isFollowing)
-    <button>フォロー解除</button>
+    <form action="{{ route('unfollow', $user->id) }}" method="POST">
+        @csrf
+        <button>フォロー解除</button>
+    </form>
 @else
-    <button>フォローする</button>
+    <form action="{{ route('follow', $user->id) }}" method="POST">
+        @csrf
+        <button>フォローする</button>
+    </form>
 @endif
 
 </x-login-layout>
