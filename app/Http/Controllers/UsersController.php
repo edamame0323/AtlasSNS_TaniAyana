@@ -43,9 +43,13 @@ class UsersController extends Controller
         // 相手のIDがその配列にあるか調べる
         $isFollowing = in_array($user->id, $followingIds);
 
+        // 相手ユーザーの投稿を新しい順で取得
+        $posts = $user->posts()->latest()->get();
+
         return view('users.profile', [
             'user' => $user,
             'isFollowing' => $isFollowing,
+            'posts' => $posts,
         ]);
     }
 }
