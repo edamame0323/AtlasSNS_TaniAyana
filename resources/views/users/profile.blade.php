@@ -25,12 +25,12 @@
             @if($isFollowing)
             <form action="{{ route('unfollow', $user->id) }}" method="POST">
                 @csrf
-                <button>フォロー解除</button>
+                <button class="unfollow-btn">フォロー解除</button>
             </form>
         @else
             <form action="{{ route('follow', $user->id) }}" method="POST">
                 @csrf
-                <button>フォローする</button>
+                <button class="follow-btn">フォローする</button>
             </form>
         @endif
     </div>

@@ -17,7 +17,9 @@
 
         <div class="post-item">
 
-            <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="アイコン">
+            <a href="{{ route('user.profile', $post->user->id) }}">
+                <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="アイコン">
+            </a>
 
             <div class="post-content">
 
