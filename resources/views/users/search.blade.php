@@ -33,9 +33,7 @@
 
         <div class="user-info">
             <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
-            <a href="{{ route('user.profile', $user->id) }}">
-                {{ $user->username }}
-            </a>
+            <p>{{ $user->username }}</p>
         </div>
 
         <!-- フォロー/フォロー解除ボタンを書く -->

@@ -5,7 +5,9 @@
 
 <div class="follow-icons">
     @foreach($followerUsers as $user)
-        <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
+        <a href="{{ route('user.profile', $user->id) }}">
+            <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
+        </a>
     @endforeach
 </div>
 
