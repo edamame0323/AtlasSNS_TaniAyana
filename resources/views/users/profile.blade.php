@@ -8,4 +8,10 @@
 
 <p>自己紹介:{{ $user->bio }}</p>
 
+@if($isFollowing)
+    <button>フォロー解除</button>
+@else
+    <button>フォローする</button>
+@endif
+
 </x-login-layout>

@@ -31,10 +31,21 @@ class UsersController extends Controller
 
         public function profile($user_id)
     {
+        // 相手ユーザーを取得
         $user = User::find($user_id);
+
+        // ログインユーザーがフォローしている人のID一覧を取得
+        $followingIds = Auth::user()
+            ->follows()
+            ->pluck('users.id')
+            ->toArray();
+
+        // 相手のIDがその配列にあるか調べる
+        $isFollowing = in_array($user->id, $followingIds);
 
         return view('users.profile', [
             'user' => $user,
+            'isFollowing' => $isFollowing,
         ]);
     }
 }
