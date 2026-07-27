@@ -15,6 +15,8 @@ class ProfileController extends Controller
     // 自分のプロフィール
     public function profile()
     {
-        return view('profiles.profile');
+        $user = Auth::user();
+
+        return view('profiles.profile', compact('user'));
     }
 }
