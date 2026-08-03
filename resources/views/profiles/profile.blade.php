@@ -2,7 +2,7 @@
 
 <h1>プロフィール編集画面</h1>
 
-<form method="POST" enctype="multipart/form-data">
+<form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">

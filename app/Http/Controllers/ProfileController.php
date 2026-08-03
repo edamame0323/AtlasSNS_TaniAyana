@@ -19,4 +19,9 @@ class ProfileController extends Controller
 
         return view('profiles.profile', compact('user'));
     }
+
+    public function update(Request $request)
+    {
+        dd($request->all());
+    }
 }

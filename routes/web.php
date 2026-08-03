@@ -34,6 +34,9 @@ Route::middleware('auth')->group(function () {
     // 自分のプロフィール
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 
+    // 自分のプロフィールを更新する
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
     // 相手のプロフィール
     Route::get('/profile/{user_id}', [UsersController::class, 'profile'])->name('user.profile');
 
