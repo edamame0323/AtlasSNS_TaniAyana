@@ -16,6 +16,10 @@
         value="{{ $user->username }}"
     >
 
+    @error('username')
+        <p>{{ $message }}</p>
+    @enderror
+
     <label for="email">メールアドレス</label>
 
     <input
@@ -24,6 +28,10 @@
         name="email"
         value="{{ $user->email }}"
     >
+
+    @error('email')
+        <p>{{ $message }}</p>
+    @enderror
 
     <label for="password">パスワード</label>
 

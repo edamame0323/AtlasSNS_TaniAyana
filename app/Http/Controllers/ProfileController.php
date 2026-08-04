@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Validation\Rule;
 
 
 class ProfileController extends Controller
@@ -22,6 +23,18 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'username' => 'required|min:2|max:12',
+
+            'email' => [
+                'required',
+                'email',
+                'min:5',
+                'max:40',
+                Rule::unique('users', 'email')->ignore(Auth::id()),
+            ],
+        ]);
+
+        dd('usernameのバリデーションを通過しました');
     }
 }
