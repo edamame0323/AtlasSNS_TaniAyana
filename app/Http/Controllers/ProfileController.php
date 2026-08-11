@@ -33,6 +33,14 @@ class ProfileController extends Controller
                 'max:40',
                 Rule::unique('users', 'email')->ignore(Auth::id()),
             ],
+
+            'password' => 'required|alpha_num|min:8|max:20',
+
+            'password_confirmation' => 'required|alpha_num|min:8|max:20|same:password',
+
+            'bio' => 'nullable|max:150',
+
+            'icon' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
         ]);
 
         dd('usernameのバリデーションを通過しました');

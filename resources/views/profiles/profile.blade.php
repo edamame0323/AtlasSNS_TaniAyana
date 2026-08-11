@@ -41,6 +41,10 @@
         name="password"
     >
 
+    @error('password')
+        <p>{{ $message }}</p>
+    @enderror
+
     <label for="password_confirmation">パスワード確認</label>
 
     <input
@@ -48,6 +52,10 @@
         id="password_confirmation"
         name="password_confirmation"
     >
+
+    @error('password_confirmation')
+        <p>{{ $message }}</p>
+    @enderror
 
     <label for="bio">自己紹介</label>
 
@@ -58,6 +66,10 @@
         value="{{ $user->bio }}"
     >
 
+    @error('bio')
+        <p>{{ $message }}</p>
+    @enderror
+
     <label for="icon">アイコン画像</label>
 
     <input
@@ -65,6 +77,10 @@
         id="icon"
         name="icon"
     >
+
+    @error('icon')
+        <p>{{ $message }}</p>
+    @enderror
 
     <button type="submit">更新</button>
 
