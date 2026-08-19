@@ -1,89 +1,162 @@
 <x-login-layout>
 
-<h1>プロフィール編集画面</h1>
+<div class="profile-edit">
 
-<form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+<!-- <h1>プロフィール編集画面</h1> -->
+
+    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
-    <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
+        <!-- {{-- ユーザー名 --}} -->
+        <div class="profile-edit-row">
 
-    <label for="username">ユーザー名</label>
+            <div class="profile-edit-icon">
+                <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
+            </div>
 
-    <input
-        type="text"
-        id="username"
-        name="username"
-        value="{{ $user->username }}"
-    >
+            <label for="username">ユーザー名</label>
 
-    @error('username')
-        <p>{{ $message }}</p>
-    @enderror
+            <div class="profile-edit-input">
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value="{{ $user->username }}"
+                >
+            </div>
 
-    <label for="email">メールアドレス</label>
+            <div class="profile-edit-error">
+                @error('username')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
 
-    <input
-        type="email"
-        id="email"
-        name="email"
-        value="{{ $user->email }}"
-    >
+        </div>
 
-    @error('email')
-        <p>{{ $message }}</p>
-    @enderror
+        <!-- {{-- メールアドレス --}} -->
+        <div class="profile-edit-row">
 
-    <label for="password">パスワード</label>
+            <div class="profile-edit-icon"></div>
 
-    <input
-        type="password"
-        id="password"
-        name="password"
-    >
+            <label for="email">メールアドレス</label>
 
-    @error('password')
-        <p>{{ $message }}</p>
-    @enderror
+            <div class="profile-edit-input">
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ $user->email }}"
+                >
+            </div>
 
-    <label for="password_confirmation">パスワード確認</label>
+            <div class="profile-edit-error">
+                @error('email')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
 
-    <input
-        type="password"
-        id="password_confirmation"
-        name="password_confirmation"
-    >
+        </div>
 
-    @error('password_confirmation')
-        <p>{{ $message }}</p>
-    @enderror
+        <!-- {{-- パスワード --}} -->
+        <div class="profile-edit-row">
 
-    <label for="bio">自己紹介</label>
+            <div class="profile-edit-icon"></div>
 
-    <input
-        type="text"
-        id="bio"
-        name="bio"
-        value="{{ $user->bio }}"
-    >
+            <label for="password">パスワード</label>
 
-    @error('bio')
-        <p>{{ $message }}</p>
-    @enderror
+            <div class="profile-edit-input">
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                >
+            </div>
 
-    <label for="icon">アイコン画像</label>
+            <div class="profile-edit-error">
+                @error('password')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
 
-    <input
-        type="file"
-        id="icon"
-        name="icon"
-    >
+        </div>
 
-    @error('icon')
-        <p>{{ $message }}</p>
-    @enderror
 
-    <button type="submit">更新</button>
+        <div class="profile-edit-row">
 
-</form>
+            <div class="profile-edit-icon"></div>
+
+            <label for="password_confirmation">パスワード確認</label>
+
+            <div class="profile-edit-input">
+                <input
+                    type="password"
+                    id="password_confirmation"
+                    name="password_confirmation"
+                >
+            </div>
+
+            <div class="profile-edit-error">
+                @error('password_confirmation')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
+
+        </div>
+
+        <!-- {{-- 自己紹介 --}} -->
+        <div class="profile-edit-row">
+
+            <div class="profile-edit-icon"></div>
+
+            <label for="bio">自己紹介</label>
+
+            <div class="profile-edit-input">
+                <input
+                    type="text"
+                    id="bio"
+                    name="bio"
+                    value="{{ $user->bio }}"
+                >
+            </div>
+
+            <div class="profile-edit-error">
+                @error('bio')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
+
+        </div>
+
+    <!-- {{-- アイコン画像 --}} -->
+        <div class="profile-edit-row">
+
+            <div class="profile-edit-icon"></div>
+
+            <label for="icon">アイコン画像</label>
+
+            <div class="profile-edit-input">
+                <input
+                    type="file"
+                    id="icon"
+                    name="icon"
+                >
+            </div>
+
+            <div class="profile-edit-error">
+                @error('icon')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
+
+        </div>
+
+        <!-- {{-- 更新ボタン --}} -->
+        <div class="profile-edit-button">
+            <button type="submit">更新</button>
+        </div>
+
+    </form>
+
+</div>
 
 </x-login-layout>

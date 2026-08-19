@@ -1,6 +1,6 @@
 <x-login-layout>
 
-<h1>相手プロフィール</h1>
+<!-- <h1>相手プロフィール</h1> -->
 
 <div class="profile-info">
 

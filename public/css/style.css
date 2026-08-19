@@ -408,3 +408,80 @@ header {
 .profile-post-text {
     margin-top: 15px;
 }
+
+/* プロフィール編集画面 */
+.profile-edit {
+    padding: 30px 220px 50px;
+}
+
+/* 入力項目1行分 */
+.profile-edit-row {
+    display: grid;
+    grid-template-columns: 90px 270px 410px 1fr;
+    align-items: center;
+    min-height: 90px;
+}
+
+/* アイコン */
+.profile-edit-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-edit-icon img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ラベル */
+.profile-edit-row label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 入力欄 */
+.profile-edit-input input[type="text"],
+.profile-edit-input input[type="email"],
+.profile-edit-input input[type="password"] {
+    width: 100%;
+    height: 42px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* ファイル選択 */
+.profile-edit-input input[type="file"] {
+    font-size: 16px;
+}
+
+/* エラーメッセージ */
+.profile-edit-error {
+    padding-left: 15px;
+}
+
+.profile-edit-error p {
+    margin: 0;
+    color: #ff6666;
+    font-size: 16px;
+}
+
+/* 更新ボタン */
+.profile-edit-button {
+    margin-top: 25px;
+    margin-left: 280px;
+}
+
+.profile-edit-button button {
+    width: 175px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    background-color: #f03b52;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
