@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 
 class ProfileController extends Controller
@@ -43,6 +44,25 @@ class ProfileController extends Controller
             'icon' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
         ]);
 
-        dd('usernameのバリデーションを通過しました');
+        $user = Auth::user();
+
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->bio = $request->bio;
+
+         if ($request->hasFile('icon')) {
+            $file = $request->file('icon');
+
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+
+            $file->move(public_path('images'), $filename);
+
+            $user->icon_image = $filename;
+        }
+
+        $user->save();
+
+        return redirect()->route('profile');
     }
 }
