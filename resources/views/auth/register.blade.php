@@ -1,8 +1,6 @@
 <x-logout-layout>
 
-<div class="login-wrapper">
-
-    <div class="login-form">
+    <div class="login_form">
 
         <!-- Laravel Cllective（補助ライブラリ）を使ったコードはこっち↓ -->
         <!-- 適切なURLを入力してください -->
@@ -11,7 +9,7 @@
         <h2>新規ユーザー登録</h2>
 
             @if ($errors->any())
-                <div class="error-message">
+                <div class="error_message">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -32,19 +30,17 @@
         {{ Form::label('password_confirmation', 'パスワード確認') }}
         {{ Form::password('password_confirmation',['class' => 'input']) }}
 
-        <div class="login-btn">
+        <div class="login_btn">
             {{ Form::submit('登録') }}
         </div>
 
-        <p class="register-link">
+        <p class="register_link">
             <a href="login">ログイン画面へ戻る</a>
         </p>
 
         {!! Form::close() !!}
 
     </div>
-
-</div>
 
 </x-logout-layout>
 

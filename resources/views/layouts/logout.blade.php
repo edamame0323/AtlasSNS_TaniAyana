@@ -24,7 +24,7 @@
     </head>
     <body class="logout-page">
 
-      <div class="login-wrapper">
+      <div class="login_wrapper">
 
         <header>
             <h1><img src="images/atlas.png"></h1>

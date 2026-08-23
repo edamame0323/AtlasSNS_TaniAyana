@@ -17,18 +17,19 @@
             <label for="username">ユーザー名</label>
 
             <div class="profile_edit_input">
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value="{{ $user->username }}"
-                >
-            </div>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        value="{{ $user->username }}"
+                    >
 
-            <div class="profile_edit_error">
-                @error('username')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="profile_edit_error">
+                    @error('username')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>
@@ -41,18 +42,19 @@
             <label for="email">メールアドレス</label>
 
             <div class="profile_edit_input">
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value="{{ $user->email }}"
-                >
-            </div>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="{{ $user->email }}"
+                    >
 
-            <div class="profile_edit_error">
-                @error('email')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="profile_edit_error">
+                    @error('email')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>
@@ -70,12 +72,13 @@
                     id="password"
                     name="password"
                 >
-            </div>
 
-            <div class="profile_edit_error">
-                @error('password')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="profile_edit_error">
+                    @error('password')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>
@@ -85,20 +88,22 @@
 
             <div class="profile_edit_icon"></div>
 
-            <label for="passwordConfirmation">パスワード確認</label>
+            <label for="password_confirmation">パスワード確認</label>
 
             <div class="profile_edit_input">
-                <input
-                    type="password"
-                    id="passwordConfirmation"
-                    name="password_confirmation"
-                >
-            </div>
+                    <input
+                        type="password"
+                        id="password_confirmation"
+                        name="password_confirmation"
+                    >
 
-            <div class="profile_edit_error">
-                @error('password_confirmation')
-                    <p>{{ $message }}</p>
-                @enderror
+
+                <div class="profile_edit_error">
+                    @error('password_confirmation')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>
@@ -111,18 +116,19 @@
             <label for="bio">自己紹介</label>
 
             <div class="profile_edit_input">
-                <input
-                    type="text"
-                    id="bio"
-                    name="bio"
-                    value="{{ $user->bio }}"
-                >
-            </div>
+                    <input
+                        type="text"
+                        id="bio"
+                        name="bio"
+                        value="{{ $user->bio }}"
+                    >
 
-            <div class="profile_edit_error">
-                @error('bio')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="profile_edit_error">
+                    @error('bio')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>
@@ -135,17 +141,18 @@
             <label for="icon">アイコン画像</label>
 
             <div class="profile_edit_input">
-                <input
-                    type="file"
-                    id="icon"
-                    name="icon"
-                >
-            </div>
+                    <input
+                        type="file"
+                        id="icon"
+                        name="icon"
+                    >
 
-            <div class="profile_edit_error">
-                @error('icon')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="profile_edit_error">
+                    @error('icon')
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
             </div>
 
         </div>

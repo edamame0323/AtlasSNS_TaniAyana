@@ -2,27 +2,27 @@
 
 <!-- <h1>相手プロフィール</h1> -->
 
-<div class="profile-info">
+<div class="profile_info">
 
-    <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン" class="profile-icon">
+    <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン" class="profile_icon">
 
-    <div class="profile-detail">
+    <div class="profile_detail">
 
-        <div class="profile-row">
-            <p class="profile-label">ユーザー名</p>
+        <div class="profile_row">
+            <p class="profile_label">ユーザー名</p>
             <p>{{ $user->username }}</p>
         </div>
 
-        <div class="profile-row">
-            <p class="profile-label">自己紹介</p>
+        <div class="profile_row">
+            <p class="profile_label">自己紹介</p>
             <p>{{ $user->bio }}</p>
         </div>
 
     </div>
 
-    <div class="profile-button">
+    <div class="profile_button">
 
-            @if($isFollowing)
+            @if($is_following)
             <form action="{{ route('unfollow', $user->id) }}" method="POST">
                 @csrf
                 <button class="unfollow-btn">フォロー解除</button>
@@ -50,7 +50,7 @@
                 <p>{{ $post->created_at }}</p>
             </div>
 
-            <p class="profile-post-text">{{ $post->post }}</p>
+            <p class="profile_post_text">{{ $post->post }}</p>
 
         </div>
 

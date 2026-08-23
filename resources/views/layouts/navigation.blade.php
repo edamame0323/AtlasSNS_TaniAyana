@@ -3,13 +3,13 @@
         <div id="head">
             <h1>
                 <a href="{{ route('top') }}">
-                    <img src="{{ asset('images/atlas.png') }}">
+                    <img src="{{ asset('images/atlas.png') }}" alt="AtlasSNS">
                 </a>
             </h1>
 
-            <div class="accordion-menu">  <!-- メニュー全体を囲う -->
+            <nav class="accordion_menu">  <!-- メニュー全体を囲う -->
 
-                <div class="menu-trigger">  <!-- ここをクリックする場所にする -->
+                <div class="menu_trigger">  <!-- ここをクリックする場所にする -->
 
                     <p>{{ Auth::user()->username }} さん</p>
 
@@ -17,10 +17,10 @@
 
                     <img src="{{ asset('images/' . Auth::user()->icon_image) }}"
                          alt="アイコン"
-                         class="header-icon">
+                         class="header_icon">
                 </div>
 
-                <ul class="menu-list">
+                <ul class="menu_list">
                     <li><a href="{{ route('top') }}">HOME</a></li>
                     <li><a href="{{ route('profile') }}">プロフィール編集</a></li>
                     <!-- ログアウトのrouteのみPOSTだからaタグでは送れないからformを使う -->
@@ -32,15 +32,15 @@
                     </li>
                 </ul>
 
-            </div>
+            </nav>
         </div>
 
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const trigger = document.querySelector('.menu-trigger');
-    const menu = document.querySelector('.menu-list');
+    const trigger = document.querySelector('.menu_trigger');
+    const menu = document.querySelector('.menu_list');
     const arrow = document.querySelector('.arrow');
 
     trigger.addEventListener('click', function () {

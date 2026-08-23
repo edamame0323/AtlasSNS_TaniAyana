@@ -1,8 +1,6 @@
 <x-logout-layout>
 
-<div class="login-wrapper">
-
-  <div class="login-form">
+  <div class="login_form login_page">
 
     <!-- 適切なURLを入力してください -->
     {!! Form::open(['url' => 'login']) !!}
@@ -15,17 +13,15 @@
     {{ Form::label('password', 'パスワード') }}
     {{ Form::password('password',['class' => 'input']) }}
 
-    <div class="login-btn">
+    <div class="login_btn">
       {{ Form::submit('ログイン') }}
     </div>
 
-      <p class="register-link">
+      <p class="register_link">
         <a href="register">新規ユーザーの方はこちら</a>
       </p>
 
     {!! Form::close() !!}
   </div>
-
-</div>
 
 </x-logout-layout>

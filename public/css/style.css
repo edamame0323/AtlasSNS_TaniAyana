@@ -32,7 +32,7 @@ header {
 
 /* アコーディオンメニュー自体の見た目を整える */
 /* ①メニューの基準位置を作る */
-.accordion-menu {
+.accordion_menu {
     position: relative;
     margin-left: auto;
     z-index: 100;
@@ -40,14 +40,14 @@ header {
     top: 20px;
 }
 
-.menu-trigger {
+.menu_trigger {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
 
-.menu-trigger p {
+.menu_trigger p {
     color: #fff;
     font-size: 24px;
     font-weight: normal;
@@ -58,12 +58,12 @@ header {
     margin-right: 15px;
 }
 
-.header-icon {
+.header_icon {
     width: 50px;
     height: 50px;
 }
 
-.menu-list {
+.menu_list {
     display: none;
     position: absolute;
     top: 50px;
@@ -74,12 +74,12 @@ header {
     z-index: 100;
 }
 
-.menu-list li {
+.menu_list li {
     text-align: center;
     border-bottom: 1px solid #ccc;
 }
 
-.menu-list li a {
+.menu_list li a {
     display: block;
     font-size: 16px;
     padding: 15px;
@@ -88,13 +88,13 @@ header {
 }
 
 /* ⑤「:hover」→　マウス乗せた時の色変更 */
-.menu-list li a:hover {
+.menu_list li a:hover {
     background: #186AC9;
     color: white;
 }
 
 /* ログアウトのところがボタンみたいになってるから、リンクっぽく見せる（HOME・プロフィールと統一） */
-.menu-list button {
+.menu_list button {
     width: 100%;
     padding: 15px;
     border: none;
@@ -104,7 +104,7 @@ header {
     cursor: pointer;
 }
 
-.menu-list button:hover {
+.menu_list button:hover {
     background: #186AC9;
     color: white;
 }
@@ -119,7 +119,7 @@ header {
     flex: 0 0 80%;
 }
 
-#side-bar {
+#sideBar {
     flex: 0 0 20%;
     border-left: 1px solid #727272;
 }
@@ -275,26 +275,26 @@ header {
 }
 
 /* ユーザー検索画面 */
-.search-area {
+.search_area {
     display: flex;
     align-items: center;
     gap: 250px;
     margin: 50px;
 }
 
-.search-form {
+.search_form {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.search-input {
+.search_input {
     width: 350px;
     height: 50px;
     padding: 0 15px;
 }
 
-.search-btn {
+.search_btn {
     border: none;
     background: none;
     cursor: pointer;
@@ -302,39 +302,39 @@ header {
     outline: none;
 }
 
-.search-btn img {
+.search_btn img {
     width: 50px;
     height: auto;
 }
 
-.search-keyword {
+.search_keyword {
     font-size: 24px;
 }
 
 /* ユーザー一覧 */
-.user-list {
+.user_list {
     margin-top: 30px;
 }
 
-.user-item {
+.user_item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 30px 50px;
 }
 
-.user-info {
+.user_info {
     display: flex;
     align-items: center;
 }
 
-.user-item img {
+.user_item img {
     width: 50px;
     height: 50px;
     margin-right: 20px;
 }
 
-.user-item p {
+.user_item p {
     font-size: 24px;
     margin: 0;
 }
@@ -360,54 +360,55 @@ header {
 }
 
 /* フォローリスト */
-.follow-icons {
+.follow_icons {
     display: flex;
     gap: 10px;
     padding: 20px;
 }
 
-.follow-icons img {
+.follow_icons img {
     width: 50px;
     height: 50px;
 }
 
 /* 相手のプロフィール画面の投稿一覧専用↓ */
-.profile-info {
+.profile_info {
     display: flex;
     align-items: center;
     padding: 30px 40px;
     border-bottom: 8px solid #ddd;
 }
 
-.profile-icon {
+.profile_icon {
     width: 50px;
     height: 50px;
 }
 
-.profile-detail {
+.profile_detail {
     margin-left: 40px;
 }
 
-.profile-row {
+.profile_row {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.profile-label {
+.profile_label {
     width: 120px;
     font-weight: bold;
 }
 
-.profile-button {
+.profile_button {
     margin-left: auto;
     align-self: flex-end;
     margin-right: 20px;
 }
 
-.profile-post-text {
+.profile_post_text {
     margin-top: 15px;
 }
+
 
 /* プロフィール編集画面 */
 .profile_edit {
@@ -460,7 +461,7 @@ header {
 
 /* エラーメッセージ */
 .profile_edit_error {
-    padding-left: 15px;
+    padding-left: 5px;
 }
 
 .profile_edit_error p {

@@ -73,36 +73,36 @@ class PostsController extends Controller
     public function followList()
     {
         // フォローしているユーザーを取得
-        $followUsers = Auth::user()->follows;
+        $follow_users = Auth::user()->follows;
 
         // フォローしているユーザーのIDだけ取り出す
-        $followUserIds = $followUsers->pluck('id');
+        $follow_user_ids = $follow_users->pluck('id');
 
         // フォローしているユーザーの投稿を取得
         $posts = Post::with('user')
-            ->whereIn('user_id', $followUserIds)
+            ->whereIn('user_id', $follow_user_ids)
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('follows.followList', compact('followUsers', 'posts'));
+        return view('follows.followList', compact('follow_users', 'posts'));
     }
 
     // フォロワー
     public function followerList()
     {
         // フォロワーを取得
-        $followerUsers = Auth::user()->followers;
+        $follower_users = Auth::user()->followers;
 
         // フォロワーのIDを取り出す
-        $followerUserIds = $followerUsers->pluck('id');
+        $follower_user_ids = $follower_users->pluck('id');
 
         // フォロワーの投稿を取得・投稿日時が新しい順番に並べる
         $posts = Post::with('user')
-            ->whereIn('user_id', $followerUserIds)
+            ->whereIn('user_id', $follower_user_ids)
             ->orderBy('created_at', 'desc')
             ->get();
 
-        // フォロワー一覧の$followerUsersと、投稿一覧用の$postsの両方をBladeに渡している
-        return view('follows.followerList', compact('followerUsers', 'posts'));
+        // フォロワー一覧の$follower_usersと、投稿一覧用の$postsの両方をBladeに渡している
+        return view('follows.followerList', compact('follower_users', 'posts'));
     }
 }

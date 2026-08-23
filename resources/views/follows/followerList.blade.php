@@ -3,8 +3,8 @@
 <!-- <h1>フォロワーリスト画面</h1> -->
   <h2>フォロワーリスト</h2>
 
-<div class="follow-icons">
-    @foreach($followerUsers as $user)
+<div class="follow_icons">
+    @foreach($follower_users as $user)
         <a href="{{ route('user.profile', $user->id) }}">
             <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン">
         </a>
