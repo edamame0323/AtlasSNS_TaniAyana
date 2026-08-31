@@ -71,6 +71,7 @@
                     type="password"
                     id="password"
                     name="password"
+                    autocomplete="new-password"
                 >
 
                 <div class="profile_edit_error">
@@ -95,6 +96,7 @@
                         type="password"
                         id="password_confirmation"
                         name="password_confirmation"
+                        autocomplete="new-password"
                     >
 
 

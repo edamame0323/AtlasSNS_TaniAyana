@@ -16,6 +16,12 @@ header {
     width: 100%;
 }
 
+/* Atlasロゴ */
+#head h1 img {
+    width: 250px;
+    height: auto;
+}
+
 /* 矢印の見た目の設定と回転の見た目 */
 .arrow {
     display: inline-block;
@@ -36,7 +42,7 @@ header {
     position: relative;
     margin-left: auto;
     z-index: 100;
-    right: 250px;
+    right: 150px;
     top: 20px;
 }
 
@@ -110,18 +116,52 @@ header {
 }
 
 /* main content */
+/* メインコンテンツとサイドバーを横並びにする親要素 */
 #row {
     display: flex;
     flex-flow: row wrap;
 }
 
+/* メインコンテンツ側の設定 */
 #container {
     flex: 0 0 80%;
 }
 
+/* サイドバー側の設定 */
 #sideBar {
     flex: 0 0 20%;
     border-left: 1px solid #727272;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+/* サイドバーのボタン */
+#sideBar .btn {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#sideBar .btn a {
+    display: inline-block;
+    background: #186AC9;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+/* フォローリスト・フォロワーリストボタン */
+#sideBar .follow-list-btn,
+#sideBar .follower-list-btn {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+/* ユーザー検索ボタン */
+#sideBar .search-btn {
+    text-align: center;
 }
 
 /* トップ画面の投稿画面 */
@@ -137,6 +177,12 @@ header {
     border-top: 1px solid #ccc;
 }
 
+.post-item>img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
 .post-content {
     flex: 1;
     margin-left: 15px;
@@ -150,6 +196,7 @@ header {
 .post-action {
     display: flex;
     gap: 10px;
+    align-self: flex-end;
 }
 
 .post-form {
@@ -320,7 +367,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 50px;
+    width: 510px;
+    margin: 30px auto;
 }
 
 .user_info {

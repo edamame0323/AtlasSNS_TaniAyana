@@ -100,6 +100,10 @@ header p {
 }
 
 /* 登録完了画面 */
+.added_btn {
+    text-align: center;
+}
+
 .login_btn a {
     display: inline-block;
     background: #e74c5b;

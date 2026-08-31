@@ -12,7 +12,7 @@
             早速ログインをしてみましょう。
         </p>
 
-        <div class="login_btn">
+        <div class="login_btn added_btn">
             <a href="login">ログイン画面へ</a>
         </div>
 
