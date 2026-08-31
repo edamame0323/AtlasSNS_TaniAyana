@@ -36,7 +36,7 @@
 
       <div class="post-header">
         <p class="post-name">{{ $post->user->username }}</p>
-        <p>{{ $post->created_at }}</p>
+        <p class="post-date">{{ $post->created_at }}</p>
       </div>
 
       <p>{{ $post->post }}</p>

@@ -42,7 +42,7 @@ header {
     position: relative;
     margin-left: auto;
     z-index: 100;
-    right: 150px;
+    right: 80px;
     top: 20px;
 }
 
@@ -72,9 +72,10 @@ header {
 .menu_list {
     display: none;
     position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 220px;
+    top: 65px;
+    left: auto;
+    right: -80px;
+    width: 20vw;
     background: white;
     border: 1px solid #ccc;
     z-index: 100;
@@ -120,6 +121,7 @@ header {
 #row {
     display: flex;
     flex-flow: row wrap;
+    min-height: calc(100vh - 140px);
 }
 
 /* メインコンテンツ側の設定 */
@@ -133,6 +135,15 @@ header {
     border-left: 1px solid #727272;
     padding-left: 20px;
     box-sizing: border-box;
+}
+
+#confirm {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* サイドバーのボタン */
@@ -161,7 +172,10 @@ header {
 
 /* ユーザー検索ボタン */
 #sideBar .search-btn {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin-top: 30px;
 }
 
 /* トップ画面の投稿画面 */
@@ -171,6 +185,7 @@ header {
 ・post-header
 ・post-icon */
 .post-item {
+    position: relative;
     display: flex;
     align-items: flex-start;
     padding: 20px;
@@ -193,10 +208,18 @@ header {
     justify-content: space-between;
 }
 
+.post-date {
+    width: 150px;
+    text-align: right;
+    white-space: nowrap;
+}
+
 .post-action {
     display: flex;
     gap: 10px;
-    align-self: flex-end;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 .post-form {
